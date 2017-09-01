@@ -70,33 +70,33 @@ def set_greeting_text():
     print(r.content)
 
 
-def set_persistent_menu():
-    headers = {
-        'Content-Type':'application/json'
-        }
-    data = {
-        "setting_type":"call_to_actions",
-        "thread_state" : "existing_thread",
-        "call_to_actions":[
-            {
-                "type":"web_url",
-                "title":"View Website",
-                "url":"http://codingblocks.com/" 
-            },
-            {
-                "type":"web_url",
-                "title":"Enroll now!",
-                "url":"http://students.codingblocks.xyz/purchasable_course"
-            },
-            {
-                "type":"web_url",
-                "title":"Register",
-                "url":"http://codingblocks.com/signup/"
-            }]
-        }
-    ENDPOINT = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s"%(FB_ACCESS_TOKEN)
-    r = requests.post(ENDPOINT, headers = headers, data = json.dumps(data))
-    print(r.content)
+# def set_persistent_menu():
+#     headers = {
+#         'Content-Type':'application/json'
+#         }
+#     data = {
+#         "setting_type":"call_to_actions",
+#         "thread_state" : "existing_thread",
+#         "call_to_actions":[
+#             {
+#                 "type":"web_url",
+#                 "title":"View Website",
+#                 "url":"http://codingblocks.com/" 
+#             },
+#             {
+#                 "type":"web_url",
+#                 "title":"Enroll now!",
+#                 "url":"http://students.codingblocks.xyz/purchasable_course"
+#             },
+#             {
+#                 "type":"web_url",
+#                 "title":"Register",
+#                 "url":"http://codingblocks.com/signup/"
+#             }]
+#         }
+#     ENDPOINT = "https://graph.facebook.com/v2.6/me/thread_settings?access_token=%s"%(FB_ACCESS_TOKEN)
+#     r = requests.post(ENDPOINT, headers = headers, data = json.dumps(data))
+#     print(r.content)
 
 
 

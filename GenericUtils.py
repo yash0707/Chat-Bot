@@ -3,28 +3,28 @@ import json
 import requests
 from utils2 import fetch_repl
 
-from pymongo import MongoClient
+# from pymongo import MongoClient
 
 
-MONGODB_URI = "mongodb://test:test@ds111754.mlab.com:11754/chatbot"
-client = MongoClient(MONGODB_URI, connectTimeoutMS=30000, socketTimeoutMS=None, socketKeepAlive=True)
-db = client.get_default_database()
-news_records= db.news_records
-# users = db._users    for getting the users.
+# MONGODB_URI = "mongodb://test:test@ds111754.mlab.com:11754/chatbot"
+# client = MongoClient(MONGODB_URI, connectTimeoutMS=30000, socketTimeoutMS=None, socketKeepAlive=True)
+# db = client.get_default_database()
+# news_records= db.news_records
+# # users = db._users    for getting the users.
 
-def getRECORDS(user_id):
-    records = news_records.find({"sender_id":user_id})
-    return records
+# def getRECORDS(user_id):
+#     records = news_records.find({"sender_id":user_id})
+#     return records
 
-def pushRECORD(record):
-    news_records.insert_one(record)
+# def pushRECORD(record):
+#     news_records.insert_one(record)
 
-record = {"sender_id":"1234",	
-			"news_type":"sports",
-			"language":"hindi",
-			"geo-country":"india"
-		}
-pushRECORD(record)
+# record = {"sender_id":"1234",	
+# 			"news_type":"sports",
+# 			"language":"hindi",
+# 			"geo-country":"india"
+# 		}
+# pushRECORD(record)
 
 
 APIAI_ACCESS_TOKEN = "2542abe010a74c7fa9378e7886b66089"
